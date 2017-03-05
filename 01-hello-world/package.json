@@ -1,0 +1,41 @@
+{
+  "name": "docker-hello-world",
+  "version": "1.0.0",
+  "description": "Run an express webapp in docker",
+  "main": "dest/index.js",
+  "scripts": {
+    "test": "ava",
+    "prestart": "babel lib -d dest",
+    "start": "node dest/index.js",
+    "dev": "npm run prestart && nodemon dest/index.js & npm run browsersync & npm run watch",
+    "watch": "watch -p 'lib/**/*.js' -c 'npm run prestart'",
+    "browsersync": "browser-sync start -p 'localhost:3000'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JPeer264/continuous-delivery-assignments.git"
+  },
+  "keywords": [
+    "docker"
+  ],
+  "author": "Jan Peer Stöcklmair <janpeer264@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JPeer264/continuous-delivery-assignments/issues"
+  },
+  "homepage": "https://github.com/JPeer264/continuous-delivery-assignments#readme",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.2.0",
+    "browser-sync": "^2.18.8",
+    "nodemon": "^1.11.0",
+    "watch-cli": "^0.2.1"
+  },
+  "dependencies": {
+    "express": "^4.15.0"
+  },
+  "ava": {
+    "files": "./tests/**/*.js"
+  }
+}
