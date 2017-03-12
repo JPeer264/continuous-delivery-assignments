@@ -2,6 +2,8 @@
 
 ## Usage
 
+> The application run on your localhost on port `3000`. After starting this application you can access it by `http://localhost:3000/`
+
 ### Docker
 
 > Make sure `Docker` is available in your shell. [More info](https://docs.docker.com/engine/installation/)
