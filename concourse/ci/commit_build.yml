@@ -1,0 +1,17 @@
+# run task on a Linux worker
+platform: linux
+
+# declare the image to use for the task's container
+image_resource:
+  type: docker-image
+  source:
+    repository: ruby
+    tag: 2.3.3
+
+# define a set of things that we need in order for our task to run
+inputs:
+- name: git-repository
+
+# define how concourse should run the test
+run:
+  path: git-repository/concourse/ci/test.sh
