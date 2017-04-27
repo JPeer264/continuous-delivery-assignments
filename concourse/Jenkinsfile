@@ -1,0 +1,17 @@
+pipeline {
+  agent {
+    docker 'ruby:2.4.1'
+  }
+  stages {
+    stage('init') {
+      steps {
+        sh 'bundle install'
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'rspec'
+      }
+    }
+  }
+}
